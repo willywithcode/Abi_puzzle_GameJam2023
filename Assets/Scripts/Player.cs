@@ -123,6 +123,7 @@ public class Player : MonoBehaviour
             _isFirstTough = true;
             move.Kill();
             collision.GetComponent<WallFire>()?.LossGame();
+            collision.GetComponent<Star>()?.CallNextLevel();
         }
     }
 }
