@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         tf = transform;
+        Debug.Log(map);
         angle = map.eulerAngles.z;
     }
     void Update()
