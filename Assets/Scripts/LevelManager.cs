@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class LevelManager : Singleton<LevelManager>
 {
-    [SerializeField] private Transform _currentLevel;
+    [SerializeField] private List<Transform> listLevel;
+    private Transform _currentLevel;
     public Transform CurrentLevel => _currentLevel;
-
+    private void Start()
+    {
+        _currentLevel=  Instantiate(listLevel[0]);
+        _currentLevel.gameObject.SetActive(false);
+        GameManager.Instance.StartGame();
+    }
 }
