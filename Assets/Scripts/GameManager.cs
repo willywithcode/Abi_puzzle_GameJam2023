@@ -28,6 +28,11 @@ public class GameManager : Singleton<GameManager>
         yield return new WaitForSeconds(2f);
         GameSystem.gameObject.SetActive(true);
     }
+    public void TurnOn()
+    {
+        Transition.gameObject.SetActive(true);
+
+    }
 }
 
 

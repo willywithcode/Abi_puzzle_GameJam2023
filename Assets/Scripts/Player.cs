@@ -42,7 +42,6 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             if (countTime > .7f && !_isFirstTough) return;
-            Debug.Log(1);
             _isFirstTough = false;
             countTime = 0;
             posTouchUp = Input.mousePosition;

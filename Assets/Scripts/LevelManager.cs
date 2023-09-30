@@ -25,8 +25,6 @@ public class LevelManager : Singleton<LevelManager>
     }
     public void GetNextLevel()
     {
-        DOVirtual.DelayedCall(2, () =>
-        {
             Destroy(_currentLevel.gameObject);
             if (_level == 4)
             {
@@ -38,14 +36,11 @@ public class LevelManager : Singleton<LevelManager>
                 _currentLevel = Instantiate(listLevel[_level + 1]);
                 _level++;
             }
-        });
     }
     public void RePlayLevel()
     {
-        DOVirtual.DelayedCall(2, () =>
-        {
+        
             Destroy(_currentLevel.gameObject);
             _currentLevel = Instantiate(listLevel[_level]);
-        });
     }
 }
