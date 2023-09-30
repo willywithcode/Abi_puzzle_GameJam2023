@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager>
 {
+    
     public void EnterThegame()
     {
         GameManager.Instance.ChangeState(GameState.GamePlay);
@@ -13,6 +15,7 @@ public class UIManager : Singleton<UIManager>
     {
         Destroy(LevelManager.Instance.CurrentLevel.gameObject);
         LevelManager.Instance.InstantiateLevel(i);
+
     }
     
 }

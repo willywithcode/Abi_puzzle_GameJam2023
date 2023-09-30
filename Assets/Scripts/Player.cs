@@ -122,6 +122,7 @@ public class Player : MonoBehaviour
             countStep = 0;
             _isFirstTough = true;
             move.Kill();
+            collision.GetComponent<WallFire>()?.LossGame();
         }
     }
 }

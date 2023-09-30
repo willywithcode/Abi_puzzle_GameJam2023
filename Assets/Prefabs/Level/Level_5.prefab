@@ -52,6 +52,7 @@ GameObject:
   - component: {fileID: 8709165131191852323}
   - component: {fileID: 8709165131191852320}
   - component: {fileID: 8709165131191852321}
+  - component: {fileID: 205155076624819108}
   m_Layer: 6
   m_Name: Square (4)
   m_TagString: Map
@@ -173,6 +174,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &205155076624819108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8709165131191852327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a35589fa1961140aa517841c7e1823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8709165131748793814
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +198,7 @@ GameObject:
   - component: {fileID: 8709165131748793810}
   - component: {fileID: 8709165131748793811}
   - component: {fileID: 8709165131748793808}
+  - component: {fileID: 6141884541352196742}
   m_Layer: 6
   m_Name: Square (1)
   m_TagString: Map
@@ -306,6 +320,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &6141884541352196742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8709165131748793814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a35589fa1961140aa517841c7e1823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8709165131816006349
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +344,7 @@ GameObject:
   - component: {fileID: 8709165131816006345}
   - component: {fileID: 8709165131816006350}
   - component: {fileID: 8709165131816006351}
+  - component: {fileID: 8064310874232037874}
   m_Layer: 6
   m_Name: Square (3)
   m_TagString: Map
@@ -439,6 +466,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8064310874232037874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8709165131816006349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a35589fa1961140aa517841c7e1823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8709165132106869411
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,6 +490,7 @@ GameObject:
   - component: {fileID: 8709165132106869423}
   - component: {fileID: 8709165132106869420}
   - component: {fileID: 8709165132106869421}
+  - component: {fileID: 4533018331623067556}
   m_Layer: 6
   m_Name: Square (2)
   m_TagString: Map
@@ -572,6 +612,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4533018331623067556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8709165132106869411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a35589fa1961140aa517841c7e1823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2272653857343835069
 PrefabInstance:
   m_ObjectHideFlags: 0
