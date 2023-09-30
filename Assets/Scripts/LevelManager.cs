@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,22 +25,27 @@ public class LevelManager : Singleton<LevelManager>
     }
     public void GetNextLevel()
     {
-        Destroy(_currentLevel.gameObject);
-        if (_level == 4)
+        DOVirtual.DelayedCall(2, () =>
         {
-            _currentLevel = Instantiate(listLevel[0]);
-            _level = 0;
-        } 
-        else
-        {
-
-            _currentLevel = Instantiate(listLevel[_level+1]);
-            _level++;
-        }
+            Destroy(_currentLevel.gameObject);
+            if (_level == 4)
+            {
+                _currentLevel = Instantiate(listLevel[0]);
+                _level = 0;
+            }
+            else
+            {
+                _currentLevel = Instantiate(listLevel[_level + 1]);
+                _level++;
+            }
+        });
     }
     public void RePlayLevel()
     {
-        Destroy(_currentLevel.gameObject);
-        _currentLevel = Instantiate(listLevel[_level]);
+        DOVirtual.DelayedCall(2, () =>
+        {
+            Destroy(_currentLevel.gameObject);
+            _currentLevel = Instantiate(listLevel[_level]);
+        });
     }
 }
