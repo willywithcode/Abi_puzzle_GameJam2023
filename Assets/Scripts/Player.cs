@@ -9,11 +9,11 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private LayerMask mapLayer;
     [SerializeField] private Transform currentMovePlatform;
-    private float speed = .01f;
+    private float speed = 4f;
     private Transform map;
     private Vector2 posTouchDown;
     private Vector2 posTouchUp;
-    private bool _isFirstTough = true;
+    [SerializeField] private bool _isFirstTough = true;
     private bool _canAttach = false;
     private Rigidbody2D rb;
     private Transform tf;
@@ -42,6 +42,7 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             if (countTime > .7f && !_isFirstTough) return;
+            Debug.Log(1);
             _isFirstTough = false;
             countTime = 0;
             posTouchUp = Input.mousePosition;
@@ -80,19 +81,19 @@ public class Player : MonoBehaviour
     {
         _canAttach = true;
         tf.SetParent(LevelManager.Instance.CurrentLevel);
-        hit = Physics2D.Raycast(transform.position - new Vector3(0, 1, 0) * 0.03f, Vector2.down, Mathf.Infinity, mapLayer);
+        hit = Physics2D.Raycast(transform.position - new Vector3(0, 1, 0) * 0.01f, Vector2.down, Mathf.Infinity, mapLayer);
         if (!hit.IsUnityNull())
         {
-            move = tf.DOMoveY(hit.transform.position.y, 1).OnComplete(() =>
+            move = tf.DOMoveY(hit.transform.position.y, Mathf.Abs(tf.position.y- hit.transform.position.y)/speed).SetEase(Ease.Linear).OnComplete(() =>
             {
                 
                 if (hit.transform.CompareTag("MoveInstant"))
                 {
                     tf.position = hit.transform.GetComponent<MoveInstant>().pair.transform.position;
-                    RaycastHit2D secondHit = Physics2D.Raycast(transform.position - new Vector3(0,1,0) * 0.03f, Vector2.down, Mathf.Infinity, mapLayer);
+                    RaycastHit2D secondHit = Physics2D.Raycast(transform.position - new Vector3(0,1,0) * 0.01f, Vector2.down, Mathf.Infinity, mapLayer);
                     if (!secondHit.IsUnityNull())
                     {
-                        move = tf.DOMoveY(hit.transform.position.y, 1).OnComplete(() =>
+                        move = tf.DOMoveY(hit.transform.position.y, Mathf.Abs(tf.position.y - hit.transform.position.y) / speed).SetEase(Ease.Linear).OnComplete(() =>
                         {
                             listTweenMove.Clear();
                             countStep = 0;
@@ -113,7 +114,7 @@ public class Player : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Map") && (currentMovePlatform == null || currentMovePlatform.GetChild(0).transform != collision.transform) && _canAttach)
+        if (collision.CompareTag("Map"))
         {
             _canAttach = false;
             tf.position += new Vector3(0, 0.1f, 0);
