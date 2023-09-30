@@ -13,4 +13,9 @@ public class LevelManager : Singleton<LevelManager>
         _currentLevel.gameObject.SetActive(false);
         GameManager.Instance.StartGame();
     }
+    public void InstantiateLevel(int i)
+    {
+        _currentLevel = Instantiate(listLevel[i]);
+        _currentLevel.gameObject.SetActive(false);
+    }
 }
